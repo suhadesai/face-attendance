@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Attendance System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #a7afbb;
+            font-family: Cochin, serif;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-7xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-12 text-[#1E293B]"> Face Attendance System</h1>
+
+        <div class="flex flex-col lg:flex-row justify-center items-stretch gap-8">
+
+            <!-- new employee -->
+            <a href="{{ url_for('register') }}" class="w-full max-w-sm flex-1 p-8 rounded-xl shadow-lg border border-gray-300 bg-white hover:scale-105 transition-transform duration-300 ease-in-out block text-inherit no-underline flex flex-col justify-center">
+                <h2 class="text-2xl font-semibold text-[#1E293B]">
+                    New Employee? Register Here!
+                </h2>
+            </a>
+            
+            <!-- mark attendance -->
+            <a href="{{ url_for('mark_attendance_route') }}" class="w-full max-w-sm flex-1 p-8 rounded-xl shadow-lg border border-gray-300 bg-white hover:scale-105 transition-transform duration-300 ease-in-out block text-inherit no-underline flex flex-col justify-center">
+                <h2 class="text-2xl font-semibold text-[#1E293B]">
+                    Mark Attendance Here!
+                </h2>
+            </a>
+
+            <!-- attendance log -->
+            <a href="{{ url_for('attendance') }}" class="w-full max-w-sm flex-1 p-8 rounded-xl shadow-lg border border-gray-300 bg-white hover:scale-105 transition-transform duration-300 ease-in-out block text-inherit no-underline flex flex-col justify-center">
+                <h2 class="text-2xl font-semibold text-[#1E293B]">
+                    View Attendance Log Here!
+                </h2>
+            </a>
+
+        </div>
+        
+    </div>
+</body>
+</html>

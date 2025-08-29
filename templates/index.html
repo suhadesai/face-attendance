@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Attendance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #a7afbb;
+            font-family: 'Cochin', serif;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-6xl mx-auto p-8 rounded-xl shadow-lg border border-gray-300 bg-white text-center">
+
+        <h1 class="text-4xl mb-6 text-[#1E293B]">
+            Mark your Attendance!
+        </h1>
+
+        <div class="flex flex-col lg:flex-row items-center justify-center lg:space-x-8 space-y-8 lg:space-y-0">
+
+            <div class="relative w-full max-w-2xl">
+                <img src="{{ url_for('video') }}" class="w-full h-auto border-2 border-[#5b7fb8] rounded-xl shadow-md"/>
+            </div>
+            
+            <div class="relative w-full max-w-sm">
+                <img id="modeImage" src="/changedMode" class="w-full h-auto border-2 border-[#5b7fb8] rounded-xl shadow-md"/>
+            </div>
+
+        </div>
+        <!-- Back to home button -->
+        <div class="mt-8">
+            <a
+                href="/"
+                class="inline-block bg-[#5b7fb8] text-white py-3 px-6 rounded-lg text-lg font-bold transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#5b7fb8] focus:ring-offset-2"
+            >
+                Back to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function updateModeImage() {
+            var modeImage = document.getElementById("modeImage");
+            if (modeImage) {
+                modeImage.src = "/changedMode" + "?timestamp=" + new Date().getTime();
+            } else {
+                console.error("Element with id 'modeImage' not found.");
+            }
+        }
+        setInterval(updateModeImage, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Ignore the "employees" directory
+employees/
+# Ignore .DS_Store also
+**.DS_Store
+# IDE-specific files
+.idea/
+
+# Python compiled bytecode
+__pycache__/
+*.pyc
+
+.env
+
+.venv/
